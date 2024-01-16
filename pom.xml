@@ -76,6 +76,9 @@
 				</executions>
 				<configuration>
 					<destFile>${sonar.jacoco.reportPath}</destFile>
+					<excludes>
+						<exclude>sun/util/resources/cldr/provider/CLDRLocaleDataMetaInfo.class</exclude>
+					</excludes>
 				</configuration>
 			</plugin>
 		</plugins>

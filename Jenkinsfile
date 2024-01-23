@@ -18,8 +18,10 @@ agent any
         }
         stage ('API Test') {
             steps {
-                git 'https://github.com/rodriguesxd7/tasks-api-tests'
-                bat 'mvn test'
+                dir('api-test') {
+                    git 'https://github.com/rodriguesxd7/tasks-api-tests'
+                    bat 'mvn test'
+                }
             }
         }
     }

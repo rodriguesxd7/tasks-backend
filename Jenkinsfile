@@ -33,6 +33,14 @@ agent any
                 }
             }
         }
+        stage ('Functional Tests') {
+            steps {
+                dir('functional-test') {
+                    git 'https://github.com/rodriguesxd7/tasks-functional-test'
+                    bat 'mvn test'
+                }
+            }
+        }
     }
 }
 

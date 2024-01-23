@@ -16,6 +16,12 @@ agent any
                 deploy adapters: [tomcat9(credentialsId: 'Login_TomCat', path: '', url: 'http://localhost:8001/')], contextPath: null, war: 'target/tasks-backend.war'
             }
         }
+        stage ('API Test') {
+            steps {
+                git 'https://github.com/rodriguesxd7/tasks-api-tests'
+                bat 'mvn test'
+            }
+        }
     }
 }
 

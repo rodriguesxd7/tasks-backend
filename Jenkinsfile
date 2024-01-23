@@ -8,7 +8,7 @@ agent any
         }
         stage ('Unit Tests') {
             steps {
-                bat 'mvn tests'
+                bat 'mvn test'
             }
         }
         stage ('Sonar Analysis') {
